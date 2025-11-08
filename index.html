@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致你的生日 | A Special Day</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 背景音乐 -->
+    <audio id="bgMusic" loop>
+        <source src="music/background.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- 音乐控制按钮 -->
+    <div class="music-control" id="musicControl">
+        <svg class="music-icon playing" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+    </div>
+
+    <!-- 粒子背景 -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- 导航菜单 -->
+    <nav class="nav-menu">
+        <a href="#section1" class="nav-dot active" data-section="1"></a>
+        <a href="#section2" class="nav-dot" data-section="2"></a>
+        <a href="#section3" class="nav-dot" data-section="3"></a>
+        <a href="#section4" class="nav-dot" data-section="4"></a>
+    </nav>
+
+    <!-- 欢迎页面 -->
+    <section class="welcome-section" id="welcome">
+        <div class="welcome-content fade-in">
+            <h1 class="welcome-title">Happy Birthday</h1>
+            <p class="welcome-subtitle">致最特别的你</p>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">天</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">时</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">分</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">秒</span>
+                </div>
+            </div>
+            <div class="scroll-hint">
+                <span>向下滚动</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 5v14M5 12l7 7 7-7"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第一板块：我们的十年 -->
+    <section class="content-section" id="section1">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">我们的十年</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Ten Years of Us</p>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <img src="images/2015.jpg" alt="2015年的回忆">
+                        <p>初遇的那个夏天，你的笑容如阳光般温暖</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-content">
+                        <img src="images/2017.jpg" alt="2017年的回忆">
+                        <p>一起走过的每个春夏秋冬，都是最美的风景</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <img src="images/2020.jpg" alt="2020年的回忆">
+                        <p>平凡的日子因为有你而变得不平凡</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <img src="images/2023.jpg" alt="2023年的回忆">
+                        <p>时光荏苒，感谢你一直在我身边</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <img src="images/2025.jpg" alt="2025年的今天">
+                        <p>十年之约，未来可期</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第二板块：我眼中的你 -->
+    <section class="content-section" id="section2">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">我眼中的你</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">You in My Eyes</p>
+            
+            <div class="photo-gallery">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="images/you1.jpg" alt="你的笑容">
+                        <div class="gallery-overlay">
+                            <p>你的笑容最美</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="images/you2.jpg" alt="认真的你">
+                        <div class="gallery-overlay">
+                            <p>认真的样子最动人</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="images/you3.jpg" alt="开心的你">
+                        <div class="gallery-overlay">
+                            <p>看到你开心我也开心</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="images/you4.jpg" alt="可爱的你">
+                        <div class="gallery-overlay">
+                            <p>每一刻都想记录</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="images/you5.jpg" alt="温柔的你">
+                        <div class="gallery-overlay">
+                            <p>温柔又坚强</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="images/you6.jpg" alt="特别的你">
+                        <div class="gallery-overlay">
+                            <p>独一无二的你</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 特质标签云 -->
+            <div class="traits-cloud" data-aos="fade-up">
+                <span class="trait-tag">温柔</span>
+                <span class="trait-tag">善良</span>
+                <span class="trait-tag">聪明</span>
+                <span class="trait-tag">可爱</span>
+                <span class="trait-tag">坚强</span>
+                <span class="trait-tag">体贴</span>
+                <span class="trait-tag">独立</span>
+                <span class="trait-tag">有趣</span>
+                <span class="trait-tag">美丽</span>
+                <span class="trait-tag">优雅</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三板块：我想对你说 -->
+    <section class="content-section" id="section3">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">我想对你说</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Words from Heart</p>
+            
+            <!-- 视频播放器 -->
+            <div class="video-container" data-aos="fade-up">
+                <video id="messageVideo" controls poster="images/video-poster.jpg">
+                    <source src="videos/message.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+            </div>
+
+            <!-- 文字祝福卡片 -->
+            <div class="message-cards">
+                <div class="message-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="card-content">
+                        <p class="message-text">
+                            "十年前的那个午后，阳光正好，你刚好路过。从那一刻起，我的世界里多了一抹色彩，一份温暖，一个你。"
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="message-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="card-content">
+                        <p class="message-text">
+                            "感谢你陪我走过人生最美好的十年。你的存在，让平凡的日子充满意义，让困难的时刻不再孤单。"
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="message-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="card-content">
+                        <p class="message-text">
+                            "你是我见过最特别的人。你的善良、你的温柔、你的坚强，都深深打动着我。感谢你成为我生命中最重要的人。"
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="message-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="card-content">
+                        <p class="message-text">
+                            "生日快乐！愿你永远保持那份纯真的笑容，愿你的每一天都充满阳光，愿你的所有梦想都能实现。"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 惊喜彩蛋按钮 -->
+            <div class="surprise-btn-container" data-aos="zoom-in">
+                <button class="surprise-btn" id="surpriseBtn">
+                    🎁 点击获取惊喜
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第四板块：我们的未来 -->
+    <section class="content-section" id="section4">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">我们的未来</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Our Future Together</p>
+            
+            <div class="future-dreams">
+                <div class="dream-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="dream-icon">✈️</div>
+                    <h3>一起去旅行</h3>
+                    <p>走遍世界的每一个角落，记录我们的足迹</p>
+                </div>
+                
+                <div class="dream-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="dream-icon">🏠</div>
+                    <h3>温暖的小家</h3>
+                    <p>有你在的地方，就是家</p>
+                </div>
+                
+                <div class="dream-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="dream-icon">🌟</div>
+                    <h3>追逐梦想</h3>
+                    <p>一起努力，一起成长，成为更好的自己</p>
+                </div>
+                
+                <div class="dream-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="dream-icon">❤️</div>
+                    <h3>永远在一起</h3>
+                    <p>下一个十年，下下个十年，永远</p>
+                </div>
+            </div>
+
+            <!-- 最终祝福 -->
+            <div class="final-blessing" data-aos="zoom-in" data-aos-delay="500">
+                <h3>生日快乐！</h3>
+                <p class="blessing-text">
+                    愿你的每一天都像今天一样特别<br>
+                    愿你的每一个愿望都能实现<br>
+                    愿我们的故事永远精彩<br>
+                    下一个十年，让我继续陪在你身边
+                </p>
+                <button class="firework-btn" id="fireworkBtn">🎆 点燃烟花</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 惊喜弹窗 -->
+    <div class="surprise-modal" id="surpriseModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>🎉 惊喜时刻 🎉</h3>
+            <div class="surprise-content">
+                <img src="images/surprise.jpg" alt="惊喜照片">
+                <p class="surprise-message">
+                    这是我们的第一张合照<br>
+                    那时候的我们青涩又美好<br>
+                    感谢时光，让我们相遇<br>
+                    感谢你，让我的生活充满色彩
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 烟花画布 -->
+    <canvas id="fireworkCanvas"></canvas>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
