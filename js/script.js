@@ -10,7 +10,7 @@ const particleCanvas = document.getElementById('particleCanvas');
 
 // ========== 生日倒计时 ==========
 // 设置生日日期（请修改为实际生日日期）
-const birthdayDate = new Date('2025-12-25 00:00:00').getTime();
+const birthdayDate = new Date('2025-11-10 00:00:00').getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
